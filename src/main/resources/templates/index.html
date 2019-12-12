@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css">
+    <title>Movies</title>
+</head>
+<body class="container">
+<main>
+    <form>
+
+    <h1>List of movies</h1>
+
+    <table class="table table-hover">
+
+    <thead>
+    <th scope="col">Title</th>
+    <th scope="col">Genre</th>
+    <th scope="col">Director</th>
+
+    </thead>
+
+    <tbody>
+    <tr th:each="movie: ${movies}">
+
+        <td scope="row" th:text="${movie.title}">{{Movie Title}}</td>
+        <td scope="row" th:text="${movie.genre}">{{Movie Genre}}</td>
+        <td scope="row" th:text="${movie.director}">{{Movie Director}}</td>
+    </tr>
+    </tbody>
+</table>
+    <a class="btn btn-info" href="add">Add movie</a>
+    </form>
+</main>
+
+
+</body>
+</html>
